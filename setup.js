@@ -21,18 +21,13 @@ fs.writeFileSync("package.json", JSON.stringify(packageJson, null, 2));
 log("package.json saved");
 
 const releaserc = `\
-{
-  "plugins": [
-    "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
-    "@semantic-release/changelog",
-    "@semantic-release/npm",
-    "@semantic-release/git"
-  ]
+module.exports = {
+  extends: ["@eliasnorrby/semantic-release-config"],
+  // Override rules here
 }
 `;
 
-const releasercfile = ".releaserc.json";
+const releasercfile = ".releaserc.js";
 if (!fs.existsSync(releasercfile)) {
   log(`Writing ${releasercfile}`);
   fs.writeFileSync(releasercfile, releaserc, "utf8");
@@ -79,17 +74,20 @@ if (!fs.existsSync(travisymlfile)) {
   log(`${travisymlfile} already exists`);
 }
 
-// npx semantic-release-cli setup
-// npm i -D @semantic-release/changelog @semantic-release/git
+if (process.argv[2] && process.argv[2] === "--init") {
+  console.log("Running semantic-release-cli setup...");
+  // require("child_process").execSync("npx semantic-release-cli setup", {
+  //   stdio: "inherit",
+  // });
+}
 
-// log("Installing peer dependencies (@commitlint/cli, husky)");
-// require("child_process").execSync(
-//   "npm install --save-dev @commitlint/cli husky",
-//   { stdio: "inherit" }
-// );
+log("Installing peer dependencies (semantic-release)");
+require("child_process").execSync("npm install --save-dev semantic-release", {
+  stdio: "inherit",
+});
 
-// log("Installing self (@eliasnorrby/commitlint-config)");
-// require("child_process").execSync(
-//   "npm install --save-dev @eliasnorrby/commitlint-config",
-//   { stdio: "inherit" }
-// );
+log("Installing self (@eliasnorrby/semantic-release-config)");
+require("child_process").execSync(
+  "npm install --save-dev @eliasnorrby/semantic-release-config",
+  { stdio: "inherit" }
+);
