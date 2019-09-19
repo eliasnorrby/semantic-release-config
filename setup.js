@@ -86,9 +86,8 @@ require("child_process").execSync("npm install --save-dev semantic-release", {
   stdio: "inherit",
 });
 
-// FIXME: uncomment after first publish
-// log("Installing self (@eliasnorrby/semantic-release-config)");
-// require("child_process").execSync(
-//   "npm install --save-dev @eliasnorrby/semantic-release-config",
-//   { stdio: "inherit" }
-// );
+log("Installing self (@eliasnorrby/semantic-release-config)");
+require("child_process").execSync(
+  "npm install --save-dev @eliasnorrby/semantic-release-config",
+  { stdio: "inherit" }
+);

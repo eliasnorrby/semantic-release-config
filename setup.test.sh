@@ -23,10 +23,9 @@ TRAVIS_FILE=".travis.yml"
 echo "'$TRAVIS_FILE' should exist"
 [ -e "$TRAVIS_FILE" ]
 
-# FIXME: uncomment after first publish
-# SELF="@eliasnorrby/semantic-release-config"
-# echo "'$SELF' should be installed"
-# [ -d "node_modules/$SELF" ]
+SELF="@eliasnorrby/semantic-release-config"
+echo "'$SELF' should be installed"
+[ -d "node_modules/$SELF" ]
 
 PEER="semantic-release"
 echo "'$PEER' should be installed"
