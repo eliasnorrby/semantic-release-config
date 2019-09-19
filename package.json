@@ -23,8 +23,8 @@
     "type": "git",
     "url": "https://github.com/eliasnorrby/semantic-release-config.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["config", "semantic-release"],
+  "author": "Elias Norrby",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/eliasnorrby/semantic-release-config/issues"
