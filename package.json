@@ -10,7 +10,8 @@
   },
   "files": [
     "index.js",
-    "setup.js"
+    "setup.js",
+    ".releaserc.js"
   ],
   "main": "index.js",
   "bin": "setup.js",
