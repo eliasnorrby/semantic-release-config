@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/eliasnorrby/semantic-release-config/compare/v1.1.0...v1.1.1) (2019-09-19)
+
+
+### Bug Fixes
+
+* add .releaserc.js to package ([90278fa](https://github.com/eliasnorrby/semantic-release-config/commit/90278fa))
+
 # [1.1.0](https://github.com/eliasnorrby/semantic-release-config/compare/v1.0.0...v1.1.0) (2019-09-19)
 
 
