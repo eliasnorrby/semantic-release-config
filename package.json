@@ -31,7 +31,8 @@
   },
   "homepage": "https://github.com/eliasnorrby/semantic-release-config#readme",
   "devDependencies": {
-    "semantic-release": "^15.13.24"
+    "semantic-release": "^15.13.24",
+    "typescript": "^3.6.3"
   },
   "peerDependencis": {
     "semantic-release": "^15.11.0"
