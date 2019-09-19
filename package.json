@@ -34,6 +34,11 @@
   },
   "homepage": "https://github.com/eliasnorrby/semantic-release-config#readme",
   "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@eliasnorrby/commitlint-config": "^2.0.0",
+    "@eliasnorrby/prettier-config": "^1.5.0",
+    "husky": "^3.0.5",
+    "prettier": "^1.18.2",
     "semantic-release": "^15.13.24",
     "typescript": "^3.6.3"
   },
@@ -43,5 +48,11 @@
   "dependencies": {
     "@semantic-release/changelog": "^3.0.4",
     "@semantic-release/git": "^7.0.16"
+  },
+  "prettier": "@eliasnorrby/prettier-config",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }
