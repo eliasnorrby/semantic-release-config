@@ -1,28 +1,22 @@
 sudo: false
-
-language: "node_js"
-
-# Node versions to test against
+language: node_js
 node_js:
-  - 8
-  - 11
-
-# Scripts to run during the 'test' job (default: npm test)
+- 8
+- 11
 script:
-  - npm run lint
-  - ./setup.test.sh
-
-# Uncomment to publish to npm
+- npm run lint
+- "./setup.test.sh"
 jobs:
   include:
-    # Define the release stage that runs semantic-release
-    - stage: release
-      if: branch = master
-      node_js: lts/*
-      # Overwrite the default step to skip the tests
-      script: skip
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script:
-          - npx semantic-release
+  - stage: release
+    if: branch = master
+    node_js: lts/*
+    script: skip
+    deploy:
+      provider: script
+      skip_cleanup: true
+      script:
+      - npx semantic-release
+notifications:
+  slack:
+    secure: ew0d1HT9jolKhtDc+up7cip7pxg05pdKG1AlhQLJvulRhCKJMe/XFvtK9dOFmmVe8MK/HTS4+3Z/A5ZlYghBMpYtr67U39Vux0hmJY63/SradRD2/Bg1NvcMny1eEjn6m+1l2n1eas0a0klcXSdRhjBBa3h6az7QCuc8g7o6qjBu70iJ9qkZtlBjhEmBv0gPz1riynLnGM6UHxco6te6y7dg1gc67juoUxk8ucagA/0ez1RVztLb76ftqDtkocSAVTVzJsFchY3YWyLoshAwApKTRfcGLeNWmEa23TWVvJM0KDptcd17nYOIjsmNgYOJoE2mfusZhMkZZ/lAOzOqDUa8baq2BVBqWXydTwZU53aKFLdPYdsvQvgu0lKAal6HjV66jHZUuMzuXBpyfK+L3cRnneyOtIx5vI65kSP6fWvKIoiIIobqIjViJXmQfk5XiLh3zRTPv52OgHOYN5zri39d28+8yAQbpRVoCdcbuohmZXTIrRfLBjlrc2bBiE5BZPzM+dti8jvAZ1eAoBjZPXDSHkYECuDgNG8IqNNyUNGSgyrCjJd439eMPMFV2gvKMNX9WYJoApmGF2aWwVw6VmMmrsPBBEd+PMIr4yfilFZZXadjUztqPktjxDGuKH8FmVIye+XYtYcKnQBeoNGCy21e0ba0efEKlXyv+N2d1KY=
