@@ -5,7 +5,7 @@ const log = msg => console.log(">> \x1b[36m%s\x1b[0m", msg);
 const fs = require("fs");
 if (!fs.existsSync("package.json")) {
   console.error(
-    "No package.json found in the current directory. Make sure you are in the project root. If no package.json exists yet, run `npm init` first."
+    "No package.json found in the current directory. Make sure you are in the project root. If no package.json exists yet, run `npm init` first.",
   );
   process.exit(1);
 }
@@ -24,7 +24,7 @@ const releaserc = `\
 module.exports = {
   extends: ["@eliasnorrby/semantic-release-config"],
   // Override rules here
-}
+};
 `;
 
 const releasercfile = ".releaserc.js";
@@ -76,6 +76,7 @@ if (!fs.existsSync(travisymlfile)) {
 
 if (process.argv[2] && process.argv[2] === "--init") {
   console.log("Running semantic-release-cli setup...");
+  console.log("Not really, don't know if it's safe yet.");
   // require("child_process").execSync("npx semantic-release-cli setup", {
   //   stdio: "inherit",
   // });
@@ -89,5 +90,5 @@ require("child_process").execSync("npm install --save-dev semantic-release", {
 log("Installing self (@eliasnorrby/semantic-release-config)");
 require("child_process").execSync(
   "npm install --save-dev @eliasnorrby/semantic-release-config",
-  { stdio: "inherit" }
+  { stdio: "inherit" },
 );
