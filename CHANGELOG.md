@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/eliasnorrby/semantic-release-config/compare/v1.1.1...v1.1.2) (2019-09-20)
+
+
+### Bug Fixes
+
+* **deps:** relax peer dependency reqs ([9aebe2b](https://github.com/eliasnorrby/semantic-release-config/commit/9aebe2b))
+
 ## [1.1.1](https://github.com/eliasnorrby/semantic-release-config/compare/v1.1.0...v1.1.1) (2019-09-19)
 
 
