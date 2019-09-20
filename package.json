@@ -45,7 +45,7 @@
     "typescript": "^3.6.3"
   },
   "peerDependencis": {
-    "semantic-release": "^15.11.0"
+    "semantic-release": "15.x"
   },
   "dependencies": {
     "@semantic-release/changelog": "^3.0.4",
