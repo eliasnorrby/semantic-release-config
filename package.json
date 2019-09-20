@@ -17,7 +17,9 @@
   "scripts": {
     "lint": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "check-format": "prettier --list-different '**/*.{js,jsx,ts,tsx,html,vue,css,less,scss,graphql,yaml,yml,json,md,mdx}'",
+    "format": "prettier --write '**/*.{js,jsx,ts,tsx,html,vue,css,less,scss,graphql,yaml,yml,json,md,mdx}'"
   },
   "repository": {
     "type": "git",
@@ -36,7 +38,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@eliasnorrby/commitlint-config": "^2.0.0",
-    "@eliasnorrby/prettier-config": "^1.5.0",
+    "@eliasnorrby/prettier-config": "^2.1.0",
     "husky": "^3.0.5",
     "prettier": "^1.18.2",
     "semantic-release": "^15.13.24",
@@ -49,7 +51,6 @@
     "@semantic-release/changelog": "^3.0.4",
     "@semantic-release/git": "^7.0.16"
   },
-  "prettier": "@eliasnorrby/prettier-config",
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
