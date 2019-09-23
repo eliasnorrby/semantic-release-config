@@ -1,3 +1,17 @@
+# [2.0.0](https://github.com/eliasnorrby/semantic-release-config/compare/v1.1.2...v2.0.0) (2019-09-23)
+
+
+### Continuous Integration
+
+* add github to plugin list ([7734bf2](https://github.com/eliasnorrby/semantic-release-config/commit/7734bf2))
+
+
+### BREAKING CHANGES
+
+* semantic-release will now properly do a github release
+whereas it previously only pushed the tag and changelog to the
+repository.
+
 ## [1.1.2](https://github.com/eliasnorrby/semantic-release-config/compare/v1.1.1...v1.1.2) (2019-09-20)
 
 
