@@ -21,6 +21,12 @@ npx @eliasnorrby/semantic-release-config
 This will run a setup script, adding this package to `devDependencies` and
 writing the config to `.releaserc.js`.
 
+### `--no-install`
+
+Run setup with the `--no-install` flag to avoid installing this package as a
+dependency. Your `.releaserc.js` will contain a sample list of plugins for you
+to add to instead of extending this package.
+
 ## Manually
 
 Install the package
