@@ -1,3 +1,15 @@
+# [2.1.0](https://github.com/eliasnorrby/semantic-release-config/compare/v2.0.0...v2.1.0) (2019-11-21)
+
+
+### Bug Fixes
+
+* update travis.yml template ([cfb3428](https://github.com/eliasnorrby/semantic-release-config/commit/cfb3428))
+
+
+### Features
+
+* add --no-install flag ([2147dbe](https://github.com/eliasnorrby/semantic-release-config/commit/2147dbe))
+
 # [2.0.0](https://github.com/eliasnorrby/semantic-release-config/compare/v1.1.2...v2.0.0) (2019-09-23)
 
 
