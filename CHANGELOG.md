@@ -1,3 +1,12 @@
+## [2.1.1](https://github.com/eliasnorrby/semantic-release-config/compare/v2.1.0...v2.1.1) (2019-11-21)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump https-proxy-agent from 2.2.2 to 2.2.4 ([f23264c](https://github.com/eliasnorrby/semantic-release-config/commit/f23264c))
+* **deps:** bump @semantic-release/changelog from 3.0.4 to 3.0.5 ([2cb377c](https://github.com/eliasnorrby/semantic-release-config/commit/2cb377c))
+* **deps:** bump @semantic-release/git from 7.0.16 to 7.0.18 ([c513e8b](https://github.com/eliasnorrby/semantic-release-config/commit/c513e8b))
+
 # [2.1.0](https://github.com/eliasnorrby/semantic-release-config/compare/v2.0.0...v2.1.0) (2019-11-21)
 
 
