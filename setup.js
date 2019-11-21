@@ -40,24 +40,18 @@ sudo: false
 
 language: "node_js"
 
-# Node versions to test against
-node_js:
-  - 8
-  - 11
-
-# Scripts to run during the 'test' job (default: npm test)
-# script:
-#   - npm run lint
-#   - ./setup.test.sh
-
+jobs:
+  include:
+    - stage: test
+      node_js: lts/*
+# Uncomment to modify test script (default: npm test)
+#       script:
+#         - npm run lint
+#         - "./setup.test.sh"
 # Uncomment to publish to npm
-# jobs:
-#   include:
-#     # Define the release stage that runs semantic-release
 #     - stage: release
 #       if: branch = master
 #       node_js: lts/*
-#       # Overwrite the default step to skip the tests
 #       script: skip
 #       deploy:
 #         provider: script
