@@ -1,10 +1,43 @@
 #!/usr/bin/env node
-
-const log = msg => console.log(">> \x1b[36m%s\x1b[0m", msg);
-
 const fs = require("fs");
+const chalk = require("chalk");
+const yargs = require("yargs");
+const hasYarn = require("has-yarn")();
+
+const pkgInstall = hasYarn ? "yarn add" : "npm install";
+const pkgInstallDev = `${pkgInstall} -D`;
+
+yargs
+  .alias("v", "version")
+  .usage("Usage: $0 [options]")
+  .help("h")
+  .alias("h", "help")
+  .option("i", {
+    describe: "Install this package",
+    type: "boolean",
+    alias: "install",
+    default: true,
+  })
+  .describe("no-install", "Skip installing this package")
+  .strict(true);
+
+const argv = yargs.argv;
+
+// Set up logging methods
+const log = {
+  info: msg =>
+    console.log(`${chalk.bgGreen.black(" INFO ")} ${chalk.green(msg)}`),
+  warn: msg =>
+    console.log(`${chalk.bgYellow.black(" WARN ")} ${chalk.yellow(msg)}`),
+  skip: msg => console.log(`${chalk.bgGray(" SKIP ")} ${msg}`),
+  error: msg =>
+    console.log(`${chalk.bgRed.black(" ERROR ")} ${chalk.red(msg)}`),
+};
+
+const packageName = "@eliasnorrby/semantic-release-config";
+
 if (!fs.existsSync("package.json")) {
-  console.error(
+  log.error(
     "No package.json found in the current directory. Make sure you are in the project root. If no package.json exists yet, run `npm init` first.",
   );
   process.exit(1);
@@ -16,23 +49,38 @@ const publishConfig = {
 };
 
 packageJson.publishConfig = publishConfig;
-log("Added publishConfig access public");
+log.info("Added publishConfig access public");
 fs.writeFileSync("package.json", JSON.stringify(packageJson, null, 2));
-log("package.json saved");
+log.info("package.json saved");
 
-const releaserc = `\
+const releaserc = argv.install
+  ? `\
 module.exports = {
   extends: ["@eliasnorrby/semantic-release-config"],
+  // Override rules here
+};
+`
+  : `\
+module.exports = {
+  plugins: [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/git",
+  ],
   // Override rules here
 };
 `;
 
 const releasercfile = ".releaserc.js";
 if (!fs.existsSync(releasercfile)) {
-  log(`Writing ${releasercfile}`);
+  log.info(`Writing ${releasercfile}`);
   fs.writeFileSync(releasercfile, releaserc, "utf8");
 } else {
-  log(`${releasercfile} already exists`);
+  log.warn(`${releasercfile} already exists`);
+  log.skip(`Not writing ${releasercfile}`);
 }
 
 const travisyml = `\
@@ -62,27 +110,23 @@ jobs:
 
 const travisymlfile = ".travis.yml";
 if (!fs.existsSync(travisymlfile)) {
-  log(`Writing ${travisymlfile}`);
+  log.info(`Writing ${travisymlfile}`);
   fs.writeFileSync(travisymlfile, travisyml, "utf8");
 } else {
-  log(`${travisymlfile} already exists`);
+  log.warn(`${travisymlfile} already exists`);
+  log.skip(`Not writing ${travisymlfile}`);
 }
 
-if (process.argv[2] && process.argv[2] === "--init") {
-  console.log("Running semantic-release-cli setup...");
-  console.log("Not really, don't know if it's safe yet.");
-  // require("child_process").execSync("npx semantic-release-cli setup", {
-  //   stdio: "inherit",
-  // });
-}
-
-log("Installing peer dependencies (semantic-release)");
+log.info("Installing peer dependencies (semantic-release)");
 require("child_process").execSync("npm install --save-dev semantic-release", {
   stdio: "inherit",
 });
 
-log("Installing self (@eliasnorrby/semantic-release-config)");
-require("child_process").execSync(
-  "npm install --save-dev @eliasnorrby/semantic-release-config",
-  { stdio: "inherit" },
-);
+if (argv.install) {
+  log.info(`Installing self (${packageName})`);
+  require("child_process").execSync(`${pkgInstallDev} ${packageName}`, {
+    stdio: "inherit",
+  });
+} else {
+  log.skip("Skipping install of self");
+}
