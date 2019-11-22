@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/eliasnorrby/semantic-release-config/compare/v2.1.2...v2.1.3) (2019-11-22)
+
+
+### Bug Fixes
+
+* comment additional dependencies in no-install ([2739b64](https://github.com/eliasnorrby/semantic-release-config/commit/2739b64138898a1dfab6836ea5325fb8810b1f00))
+
 ## [2.1.2](https://github.com/eliasnorrby/semantic-release-config/compare/v2.1.1...v2.1.2) (2019-11-22)
 
 
