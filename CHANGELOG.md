@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/eliasnorrby/semantic-release-config/compare/v2.1.1...v2.1.2) (2019-11-22)
+
+
+### Bug Fixes
+
+* **deps:** bump @semantic-release/changelog from 3.0.5 to 3.0.6 ([c78d0ba](https://github.com/eliasnorrby/semantic-release-config/commit/c78d0ba01bb3a667208d493c81cf4f8f059a062c))
+
 ## [2.1.1](https://github.com/eliasnorrby/semantic-release-config/compare/v2.1.0...v2.1.1) (2019-11-21)
 
 
