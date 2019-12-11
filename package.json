@@ -30,7 +30,7 @@
     "semantic-release"
   ],
   "author": "Elias Norrby",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/eliasnorrby/semantic-release-config/issues"
   },
