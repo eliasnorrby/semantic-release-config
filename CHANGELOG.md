@@ -1,3 +1,10 @@
+## [2.1.4](https://github.com/eliasnorrby/semantic-release-config/compare/v2.1.3...v2.1.4) (2019-12-13)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump npm from 6.13.1 to 6.13.4 ([33ccdaf](https://github.com/eliasnorrby/semantic-release-config/commit/33ccdaf4d8cc8b699ba1676022070cf9ac2c8392))
+
 ## [2.1.3](https://github.com/eliasnorrby/semantic-release-config/compare/v2.1.2...v2.1.3) (2019-11-22)
 
 
