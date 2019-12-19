@@ -3,6 +3,9 @@ const fs = require("fs");
 const yargs = require("yargs");
 const hasYarn = require("has-yarn")();
 
+const ora = require("ora");
+const execa = require("execa");
+
 const { log } = require("@eliasnorrby/log-util");
 
 const pkgInstall = hasYarn ? "yarn add" : "npm install";
@@ -107,16 +110,24 @@ if (!fs.existsSync(travisymlfile)) {
   log.skip(`Not writing ${travisymlfile}`);
 }
 
-log.info("Installing peer dependencies (semantic-release)");
-require("child_process").execSync("npm install --save-dev semantic-release", {
-  stdio: "inherit",
+const spinner = ora({
+  text: "Installing...",
+  spinner: "growHorizontal",
+  color: "blue",
 });
 
-if (argv.install) {
-  log.info(`Installing self (${packageName})`);
-  require("child_process").execSync(`${pkgInstallDev} ${packageName}`, {
-    stdio: "inherit",
-  });
-} else {
-  log.skip("Skipping install of self");
-}
+(async () => {
+  log.info("Installing peer dependencies (semantic-release)");
+  spinner.start();
+  await execa.command(`${pkgInstallDev} semantic-release`);
+  spinner.stop();
+
+  if (argv.install) {
+    log.info(`Installing self (${packageName})`);
+    spinner.start();
+    await execa.command(`${pkgInstallDev} ${packageName}`);
+    spinner.stop();
+  } else {
+    log.skip("Skipping install of self");
+  }
+})();
