@@ -116,17 +116,25 @@ const spinner = ora({
   color: "blue",
 });
 
+const runCommand = async cmd => {
+  try {
+    spinner.start();
+    await execa.command(cmd);
+    spinner.stop();
+  } catch (error) {
+    spinner.stop();
+    log.fail(error);
+    process.exit(1);
+  }
+};
+
 (async () => {
   log.info("Installing peer dependencies (semantic-release)");
-  spinner.start();
-  await execa.command(`${pkgInstallDev} semantic-release`);
-  spinner.stop();
+  await runCommand(`${pkgInstallDev} semantic-release`);
 
   if (argv.install) {
     log.info(`Installing self (${packageName})`);
-    spinner.start();
-    await execa.command(`${pkgInstallDev} ${packageName}`);
-    spinner.stop();
+    await runCommand(`${pkgInstallDev} ${packageName}`);
   } else {
     log.skip("Skipping install of self");
   }
