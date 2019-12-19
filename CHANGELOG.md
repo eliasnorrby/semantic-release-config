@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/eliasnorrby/semantic-release-config/compare/v2.2.0...v2.2.1) (2019-12-19)
+
+
+### Bug Fixes
+
+* wrap installs in try/catch blocks ([ab67afd](https://github.com/eliasnorrby/semantic-release-config/commit/ab67afd865217ad50313a9aeb8c6f681a7148db7))
+
 # [2.2.0](https://github.com/eliasnorrby/semantic-release-config/compare/v2.1.4...v2.2.0) (2019-12-19)
 
 
