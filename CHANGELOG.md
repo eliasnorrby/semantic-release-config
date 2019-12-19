@@ -1,3 +1,10 @@
+## [2.2.2](https://github.com/eliasnorrby/semantic-release-config/compare/v2.2.1...v2.2.2) (2019-12-19)
+
+
+### Bug Fixes
+
+* exit consistently (use log.ok) ([e06731c](https://github.com/eliasnorrby/semantic-release-config/commit/e06731ce9e314ce1dc4b193807606adb502d5fd8))
+
 ## [2.2.1](https://github.com/eliasnorrby/semantic-release-config/compare/v2.2.0...v2.2.1) (2019-12-19)
 
 
