@@ -1,3 +1,11 @@
+# [2.2.0](https://github.com/eliasnorrby/semantic-release-config/compare/v2.1.4...v2.2.0) (2019-12-19)
+
+
+### Features
+
+* add spinner and silence output ([92ffd7a](https://github.com/eliasnorrby/semantic-release-config/commit/92ffd7a94f6b0418ee6c46316f0b0a44d240d39a))
+* use @eliasnorrby/log-util during setup ([cbc6777](https://github.com/eliasnorrby/semantic-release-config/commit/cbc6777c2f808e5a854e1977ba411e81350f54ba))
+
 ## [2.1.4](https://github.com/eliasnorrby/semantic-release-config/compare/v2.1.3...v2.1.4) (2019-12-13)
 
 
