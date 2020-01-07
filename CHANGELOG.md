@@ -1,3 +1,10 @@
+## [2.2.3](https://github.com/eliasnorrby/semantic-release-config/compare/v2.2.2...v2.2.3) (2020-01-07)
+
+
+### Bug Fixes
+
+* **deps:** bump yargs from 15.0.2 to 15.1.0 ([7a9c4dc](https://github.com/eliasnorrby/semantic-release-config/commit/7a9c4dc0ab9591efbd61b098ddfbb1fdd868bdf7))
+
 ## [2.2.2](https://github.com/eliasnorrby/semantic-release-config/compare/v2.2.1...v2.2.2) (2019-12-19)
 
 
