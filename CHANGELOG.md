@@ -1,3 +1,10 @@
+## [2.2.5](https://github.com/eliasnorrby/semantic-release-config/compare/v2.2.4...v2.2.5) (2020-01-20)
+
+
+### Bug Fixes
+
+* remove deprecated travis options ([ddeff5f](https://github.com/eliasnorrby/semantic-release-config/commit/ddeff5f6b4e03f7a86513339114dd083f70c9c57))
+
 ## [2.2.4](https://github.com/eliasnorrby/semantic-release-config/compare/v2.2.3...v2.2.4) (2020-01-20)
 
 
