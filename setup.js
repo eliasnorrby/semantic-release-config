@@ -77,8 +77,6 @@ if (!fs.existsSync(releasercfile)) {
 }
 
 const travisyml = `\
-sudo: false
-
 language: "node_js"
 
 jobs:
@@ -97,8 +95,7 @@ jobs:
 #       deploy:
 #         provider: script
 #         skip_cleanup: true
-#         script:
-#           - npx semantic-release
+#         script: npx semantic-release
 `;
 
 const travisymlfile = ".travis.yml";
