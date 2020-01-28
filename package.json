@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@eliasnorrby/log-util": "^1.1.0",
-    "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/changelog": "^5.0.0",
     "@semantic-release/git": "^8.0.0",
     "execa": "^4.0.0",
     "has-yarn": "^2.1.0",
