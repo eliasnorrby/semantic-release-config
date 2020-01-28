@@ -1,3 +1,10 @@
+## [2.2.7](https://github.com/eliasnorrby/semantic-release-config/compare/v2.2.6...v2.2.7) (2020-01-28)
+
+
+### Bug Fixes
+
+* **deps:** bump @semantic-release/git from 8.0.0 to 9.0.0 ([2a5860c](https://github.com/eliasnorrby/semantic-release-config/commit/2a5860ca44a1eeb123487863f4e9a40c80d2cc4e))
+
 ## [2.2.6](https://github.com/eliasnorrby/semantic-release-config/compare/v2.2.5...v2.2.6) (2020-01-28)
 
 
