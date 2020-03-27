@@ -1,3 +1,10 @@
+## [2.2.11](https://github.com/eliasnorrby/semantic-release-config/compare/v2.2.10...v2.2.11) (2020-03-27)
+
+
+### Bug Fixes
+
+* **deps:** bump @semantic-release/changelog from 5.0.0 to 5.0.1 ([9a381d5](https://github.com/eliasnorrby/semantic-release-config/commit/9a381d5f0d990ae37a3bdc7297f039a311b4284a))
+
 ## [2.2.10](https://github.com/eliasnorrby/semantic-release-config/compare/v2.2.9...v2.2.10) (2020-03-17)
 
 
