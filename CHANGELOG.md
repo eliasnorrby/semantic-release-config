@@ -1,3 +1,16 @@
+# [3.0.0](https://github.com/eliasnorrby/semantic-release-config/compare/v2.2.11...v3.0.0) (2020-03-30)
+
+
+### chore
+
+* **deps:** bump semantic-release from 16.04 to 17.04 ([1b4dfa2](https://github.com/eliasnorrby/semantic-release-config/commit/1b4dfa28c80bc16be0ebd754b223f90a8d983288))
+
+
+### BREAKING CHANGES
+
+* **deps:** New major release of semantic-release. Drops support
+for node < 10.18.
+
 ## [2.2.11](https://github.com/eliasnorrby/semantic-release-config/compare/v2.2.10...v2.2.11) (2020-03-27)
 
 
