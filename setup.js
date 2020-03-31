@@ -1,50 +1,50 @@
 #!/usr/bin/env node
-const fs = require("fs");
-const yargs = require("yargs");
-const hasYarn = require("has-yarn")();
+const fs = require('fs')
+const yargs = require('yargs')
+const hasYarn = require('has-yarn')()
 
-const ora = require("ora");
-const execa = require("execa");
+const ora = require('ora')
+const execa = require('execa')
 
-const { log } = require("@eliasnorrby/log-util");
+const { log } = require('@eliasnorrby/log-util')
 
-const pkgInstall = hasYarn ? "yarn add" : "npm install";
-const pkgInstallDev = `${pkgInstall} -D`;
+const pkgInstall = hasYarn ? 'yarn add' : 'npm install'
+const pkgInstallDev = `${pkgInstall} -D`
 
 yargs
-  .alias("v", "version")
-  .usage("Usage: $0 [options]")
-  .help("h")
-  .alias("h", "help")
-  .option("i", {
-    describe: "Install this package",
-    type: "boolean",
-    alias: "install",
+  .alias('v', 'version')
+  .usage('Usage: $0 [options]')
+  .help('h')
+  .alias('h', 'help')
+  .option('i', {
+    describe: 'Install this package',
+    type: 'boolean',
+    alias: 'install',
     default: true,
   })
-  .describe("no-install", "Skip installing this package")
-  .strict(true);
+  .describe('no-install', 'Skip installing this package')
+  .strict(true)
 
-const argv = yargs.argv;
+const argv = yargs.argv
 
-const packageName = "@eliasnorrby/semantic-release-config";
+const packageName = '@eliasnorrby/semantic-release-config'
 
-if (!fs.existsSync("package.json")) {
+if (!fs.existsSync('package.json')) {
   log.fail(
-    "No package.json found in the current directory. Make sure you are in the project root. If no package.json exists yet, run `npm init` first.",
-  );
-  process.exit(1);
+    'No package.json found in the current directory. Make sure you are in the project root. If no package.json exists yet, run `npm init` first.'
+  )
+  process.exit(1)
 }
 
-const packageJson = JSON.parse(fs.readFileSync("package.json", "utf8"));
+const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
 const publishConfig = {
-  access: "public",
-};
+  access: 'public',
+}
 
-packageJson.publishConfig = publishConfig;
-log.info("Added publishConfig access public");
-fs.writeFileSync("package.json", JSON.stringify(packageJson, null, 2));
-log.info("package.json saved");
+packageJson.publishConfig = publishConfig
+log.info('Added publishConfig access public')
+fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2))
+log.info('package.json saved')
 
 const releaserc = argv.install
   ? `\
@@ -65,15 +65,15 @@ module.exports = {
   ],
   // Add rules here
 };
-`;
+`
 
-const releasercfile = ".releaserc.js";
+const releasercfile = '.releaserc.js'
 if (!fs.existsSync(releasercfile)) {
-  log.info(`Writing ${releasercfile}`);
-  fs.writeFileSync(releasercfile, releaserc, "utf8");
+  log.info(`Writing ${releasercfile}`)
+  fs.writeFileSync(releasercfile, releaserc, 'utf8')
 } else {
-  log.warn(`${releasercfile} already exists`);
-  log.skip(`Not writing ${releasercfile}`);
+  log.warn(`${releasercfile} already exists`)
+  log.skip(`Not writing ${releasercfile}`)
 }
 
 const travisyml = `\
@@ -96,45 +96,45 @@ jobs:
 #         provider: script
 #         skip_cleanup: true
 #         script: npx semantic-release
-`;
+`
 
-const travisymlfile = ".travis.yml";
+const travisymlfile = '.travis.yml'
 if (!fs.existsSync(travisymlfile)) {
-  log.info(`Writing ${travisymlfile}`);
-  fs.writeFileSync(travisymlfile, travisyml, "utf8");
+  log.info(`Writing ${travisymlfile}`)
+  fs.writeFileSync(travisymlfile, travisyml, 'utf8')
 } else {
-  log.warn(`${travisymlfile} already exists`);
-  log.skip(`Not writing ${travisymlfile}`);
+  log.warn(`${travisymlfile} already exists`)
+  log.skip(`Not writing ${travisymlfile}`)
 }
 
 const spinner = ora({
-  text: "Installing...",
-  spinner: "growHorizontal",
-  color: "blue",
-});
+  text: 'Installing...',
+  spinner: 'growHorizontal',
+  color: 'blue',
+})
 
-const runCommand = async cmd => {
+const runCommand = async (cmd) => {
   try {
-    spinner.start();
-    await execa.command(cmd);
-    spinner.stop();
+    spinner.start()
+    await execa.command(cmd)
+    spinner.stop()
   } catch (error) {
-    spinner.stop();
-    log.fail(error);
-    process.exit(1);
+    spinner.stop()
+    log.fail(error)
+    process.exit(1)
   }
-};
+}
 
-(async () => {
-  log.info("Installing peer dependencies (semantic-release)");
-  await runCommand(`${pkgInstallDev} semantic-release`);
+;(async () => {
+  log.info('Installing peer dependencies (semantic-release)')
+  await runCommand(`${pkgInstallDev} semantic-release`)
 
   if (argv.install) {
-    log.info(`Installing self (${packageName})`);
-    await runCommand(`${pkgInstallDev} ${packageName}`);
+    log.info(`Installing self (${packageName})`)
+    await runCommand(`${pkgInstallDev} ${packageName}`)
   } else {
-    log.skip("Skipping install of self");
+    log.skip('Skipping install of self')
   }
 
-  log.ok("Done!");
-})();
+  log.ok('Done!')
+})()

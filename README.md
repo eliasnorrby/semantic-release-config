@@ -43,7 +43,7 @@ and add the configuration to `.releaserc.js`.
 ### `.releaserc.js`
 
 ```js
-module.exports = require("@eliasnorrby/semantic-release-config");
+module.exports = require('@eliasnorrby/semantic-release-config')
 ```
 
 # Overriding settings
@@ -52,7 +52,7 @@ Just add your overrides to `.releaserc.js`:
 
 ```js
 module.exports = {
-  ...require("@eliasnorrby/semantic-release-config"),
-  branch: "production",
-};
+  ...require('@eliasnorrby/semantic-release-config'),
+  branch: 'production',
+}
 ```
