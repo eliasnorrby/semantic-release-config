@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.1...v3.0.2) (2020-04-22)
+
+
+### Bug Fixes
+
+* **deps:** bump ora from 4.0.3 to 4.0.4 ([bc5dca8](https://github.com/eliasnorrby/semantic-release-config/commit/bc5dca87f79f3567ca85342b0d9e0787d7e06676))
+
 ## [3.0.1](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.0...v3.0.1) (2020-04-08)
 
 
