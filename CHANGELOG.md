@@ -1,3 +1,10 @@
+## [3.0.4](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.3...v3.0.4) (2020-05-25)
+
+
+### Bug Fixes
+
+* **deps:** bump execa from 4.0.1 to 4.0.2 ([32d588a](https://github.com/eliasnorrby/semantic-release-config/commit/32d588a5f96179e4d4ac588204527ba24973b0b1))
+
 ## [3.0.3](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.2...v3.0.3) (2020-05-11)
 
 
