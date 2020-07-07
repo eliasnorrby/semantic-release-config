@@ -1,3 +1,10 @@
+## [3.0.7](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.6...v3.0.7) (2020-07-07)
+
+
+### Bug Fixes
+
+* **deps:** bump yargs from 15.3.1 to 15.4.0 ([15c2868](https://github.com/eliasnorrby/semantic-release-config/commit/15c28681b4c533cd85a9c9b71cd5167c7e421368))
+
 ## [3.0.6](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.5...v3.0.6) (2020-07-07)
 
 
