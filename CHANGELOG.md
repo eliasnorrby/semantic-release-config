@@ -1,3 +1,10 @@
+## [3.0.6](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.5...v3.0.6) (2020-07-07)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump npm from 6.14.5 to 6.14.6 ([66f37c8](https://github.com/eliasnorrby/semantic-release-config/commit/66f37c87452653ca21485c40b09d40f07c791060))
+
 ## [3.0.5](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.4...v3.0.5) (2020-06-11)
 
 
