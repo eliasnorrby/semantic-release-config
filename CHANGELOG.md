@@ -1,3 +1,10 @@
+## [3.0.13](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.12...v3.0.13) (2020-09-07)
+
+
+### Bug Fixes
+
+* **deps:** bump ora from 5.0.0 to 5.1.0 ([47abd7c](https://github.com/eliasnorrby/semantic-release-config/commit/47abd7c4e034142ffd2aa76af84d0d758283ac9b))
+
 ## [3.0.12](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.11...v3.0.12) (2020-08-12)
 
 
