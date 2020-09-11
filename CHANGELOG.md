@@ -1,3 +1,10 @@
+## [3.0.14](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.13...v3.0.14) (2020-09-11)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump node-fetch from 2.6.0 to 2.6.1 ([c70cf7b](https://github.com/eliasnorrby/semantic-release-config/commit/c70cf7beed28d7be54f764a3219f84051a774c0c))
+
 ## [3.0.13](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.12...v3.0.13) (2020-09-07)
 
 
