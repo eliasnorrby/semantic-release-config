@@ -1,3 +1,10 @@
+## [3.0.15](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.14...v3.0.15) (2020-09-12)
+
+
+### Bug Fixes
+
+* **deps:** bump @eliasnorrby/log-util from 1.1.4 to 1.1.5 ([e2dd017](https://github.com/eliasnorrby/semantic-release-config/commit/e2dd0173d5df299df4ad8328c5d65ab0f26aa14c))
+
 ## [3.0.14](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.13...v3.0.14) (2020-09-11)
 
 
