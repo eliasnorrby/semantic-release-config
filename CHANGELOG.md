@@ -1,3 +1,11 @@
+## [3.0.17](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.16...v3.0.17) (2020-10-17)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump lodash from 4.17.15 to 4.17.20 ([863de55](https://github.com/eliasnorrby/semantic-release-config/commit/863de55e2850c7e70bac5137c25c116267415230))
+* **deps:** [security] bump npm-user-validate from 1.0.0 to 1.0.1 ([415da06](https://github.com/eliasnorrby/semantic-release-config/commit/415da060c6e4a2b51ab952cceda38f5fe960a47d))
+
 ## [3.0.16](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.15...v3.0.16) (2020-10-01)
 
 
