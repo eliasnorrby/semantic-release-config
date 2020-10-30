@@ -1,6 +1,6 @@
 {
   "name": "@eliasnorrby/semantic-release-config",
-  "version": "3.0.19",
+  "version": "3.0.20",
   "description": "My semantic-release config",
   "publishConfig": {
     "access": "public"

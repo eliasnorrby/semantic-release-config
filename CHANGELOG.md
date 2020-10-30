@@ -1,3 +1,10 @@
+## [3.0.20](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.19...v3.0.20) (2020-10-30)
+
+
+### Bug Fixes
+
+* **deps:** [security] bump npm-user-validate from 1.0.0 to 1.0.1 ([c194add](https://github.com/eliasnorrby/semantic-release-config/commit/c194add7b56cae98fb6b760add35d1d6e7f72bda))
+
 ## [3.0.19](https://github.com/eliasnorrby/semantic-release-config/compare/v3.0.18...v3.0.19) (2020-10-23)
 
 
