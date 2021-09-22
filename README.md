@@ -9,7 +9,7 @@
 My semantic-release config. It extends the default configuration by adding the
 `changelog` and `git` plugins.
 
-:warning: Subject to change in the future.
+:warning: This project is no longer actively maintained :warning:
 
 # Setup
 
